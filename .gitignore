@@ -1,0 +1,44 @@
+#   /home/tux/workspace/bitbucket.org/empreender/.gitignore
+#
+#
+#   Ignore directories by entering the directory name into the file (with a slash appended):
+RemoteSystemsTempFiles/
+nbproject/
+target/
+dist/
+tmp/
+build/
+.metadata/
+.project/
+Servers/
+target/
+dist/
+bin/
+lib/
+docs/negocio/
+docs/template/
+docs/OpenShift/
+docs/manual-usuario/
+src/main/webapp/resources/bower_components/
+
+
+
+#    Ignore files
+.settings
+.nbattrs
+.project
+*.class
+nb-configuration.xml
+*.class
+*.tar.gz
+*.*~
+*.swo
+*.swp
+*.commandLog
+*.snapshot
+src/main/resources/META-INF/.persistence.xml.swp
+docs/umlet/*.png
+docs/umlet/*.jpg
+sample.log
+sample.properties
+npm-debug.log
