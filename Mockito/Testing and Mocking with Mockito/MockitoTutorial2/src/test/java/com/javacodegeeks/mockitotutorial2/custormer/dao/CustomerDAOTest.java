@@ -112,4 +112,17 @@ public class CustomerDAOTest {
         assertEquals(expectedName2, actualCustomer2.get().getName());
     }
 
+    @Test
+    public void finding_missing_customer_should_return_null() throws Exception {
+        // Given
+        long expectedId = 10L;
+        when(mockEntityManager.find(Customer.class, expectedId)).thenReturn(null);
+
+        // When
+        Optional<Customer> actualCustomer = dao.findById(expectedId);
+
+        // Then
+        assertFalse(actualCustomer.isPresent());
+    }
+
 }
