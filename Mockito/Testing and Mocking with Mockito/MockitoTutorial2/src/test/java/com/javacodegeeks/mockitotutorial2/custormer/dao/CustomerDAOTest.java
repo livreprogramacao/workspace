@@ -245,4 +245,24 @@ public class CustomerDAOTest {
         assertEquals(actualCustomers.size(), 3);
     }
 
+    //TODO - Concluir o teste para realizar o merge de Custormer.
+//    @Test
+//    public void updating_all_customer_should_return_this_customer() throws Exception {
+//        // Given
+//        long expectedId = 101L;
+//        String expectedName = "Max High";
+//        String expectedAddress = "211 Main Avenue Entrepenur";
+//        Customer updateCustomer = new Customer(expectedId, expectedName, expectedAddress);
+//
+//        given(mockEntityManager.find(eq(Customer.class), expectedId)).willReturn(updateCustomer);
+//        given(mockEntityManager.merge(eq(Customer.class))).willReturn(updateCustomer);
+//
+//        // When
+//        Customer actualCustomer = dao.update(updateCustomer);
+//
+//        // Then
+//        assertEquals(expectedId, actualCustomer.getId());
+//        assertEquals(expectedName, actualCustomer.getName());
+//        assertEquals(expectedAddress, actualCustomer.getAddress());
+//    }
 }

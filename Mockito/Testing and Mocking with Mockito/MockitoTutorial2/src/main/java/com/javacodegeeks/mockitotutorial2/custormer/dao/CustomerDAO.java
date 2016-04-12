@@ -25,4 +25,8 @@ public class CustomerDAO {
         return query.getResultList();
     }
 
+    public Customer update(Customer customer) throws Exception {
+        return em.merge(customer);
+    }
+
 }
