@@ -1,7 +1,6 @@
 package com.javacodegeeks.mockitotutorial2.processor;
 
 import com.javacodegeeks.mockitotutorial2.printer.Printer;
-import com.javacodegeeks.mockitotutorial2.printer.StringProcessor;
 import java.util.Optional;
 import static org.junit.Assert.assertFalse;
 import org.junit.Test;

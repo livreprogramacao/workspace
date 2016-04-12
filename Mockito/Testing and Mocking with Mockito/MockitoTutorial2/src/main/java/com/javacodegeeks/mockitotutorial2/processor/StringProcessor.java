@@ -1,5 +1,6 @@
 package com.javacodegeeks.mockitotutorial2.processor;
 
+import com.javacodegeeks.mockitotutorial2.printer.Printer;
 import java.util.Optional;
 
 public class StringProcessor {
