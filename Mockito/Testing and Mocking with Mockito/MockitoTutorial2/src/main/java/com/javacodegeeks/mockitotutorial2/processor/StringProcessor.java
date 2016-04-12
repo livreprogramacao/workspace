@@ -1,6 +1,7 @@
 package com.javacodegeeks.mockitotutorial2.processor;
 
 import com.javacodegeeks.mockitotutorial2.printer.Printer;
+import com.javacodegeeks.mockitotutorial2.printer.exception.PrinterNotConnectedException;
 import java.util.Optional;
 
 public class StringProcessor {
@@ -12,7 +13,7 @@ public class StringProcessor {
         this.printer = printer;
     }
 
-    public Optional<String> statusAndTest() {
+    public Optional<String> statusAndTest() throws PrinterNotConnectedException {
         printer.printTestPage();
         return Optional.ofNullable(currentBuffer);
     }
