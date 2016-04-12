@@ -1,4 +1,4 @@
-package com.javacodegeeks.mockitotutorial2.entity;
+package com.javacodegeeks.mockitotutorial2.custormer.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
