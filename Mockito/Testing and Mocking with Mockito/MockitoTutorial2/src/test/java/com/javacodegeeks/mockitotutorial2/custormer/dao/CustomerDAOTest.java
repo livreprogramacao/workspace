@@ -7,21 +7,70 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import static org.mockito.Matchers.anyLong;
+import static org.mockito.Matchers.eq;
 import org.mockito.Mock;
 import static org.mockito.Mockito.when;
+import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerDAOTest {
 
     private CustomerDAO dao;
 
+    private Customer homerSimpson, bruceWayne, tyrionLannister;
+
     @Mock
     private EntityManager mockEntityManager;
+
+    private Answer<Customer> withCustomerById = new Answer<Customer>() {
+        @Override
+        public Customer answer(InvocationOnMock invocation) throws Throwable {
+            Object[] args = invocation.getArguments();
+            int id = ((Long) args[1]).intValue(); // Cast to int for switch.
+            switch (id) {
+                case 1:
+                    return homerSimpson;
+                case 2:
+                    return bruceWayne;
+                case 3:
+                    return tyrionLannister;
+                default:
+                    return null;
+            }
+        }
+    };
+
+    @Test
+    public void finding_customer_by_id_returns_appropriate_customer() throws Exception {
+        // Given
+        long[] expectedId = {1, 2, 3};
+
+        when(mockEntityManager.find(eq(Customer.class), anyLong())).thenAnswer(withCustomerById);
+
+        // When
+        Optional<Customer> actualCustomer0 = dao.findById(expectedId[0]);
+        Optional<Customer> actualCustomer1 = dao.findById(expectedId[1]);
+        Optional<Customer> actualCustomer2 = dao.findById(expectedId[2]);
+
+        // Then
+        assertEquals("Homer Simpson", actualCustomer0.get().getName());
+        assertEquals("Bruce Wayne", actualCustomer1.get().getName());
+        assertEquals("Tyrion Lannister", actualCustomer2.get().getName());
+    }
 
     @Before
     public void setUp() throws Exception {
         dao = new CustomerDAO(mockEntityManager);
+        setupCustomers();
+    }
+
+    private void setupCustomers() {
+        homerSimpson = new Customer(1, "Homer Simpson", "Springfield");
+        bruceWayne = new Customer(2, "Bruce Wayne", "Gotham City");
+        tyrionLannister = new Customer(2, "Tyrion Lannister", "Kings Landing");
     }
 
     @Test
