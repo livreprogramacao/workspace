@@ -7,10 +7,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.mockito.Matchers.anyLong;
-import static org.mockito.Matchers.eq;
+import static org.mockito.BDDMockito.*;
 import org.mockito.Mock;
-import static org.mockito.Mockito.when;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
@@ -208,5 +206,24 @@ public class CustomerDAOTest {
         fail("Exception should be thrown.");
     }
 
+    @Test
+    public void finding_existing_customer_should_return_customer_bdd() throws Exception {
+        // Given
+        long expectedId = 10L;
+        String expectedName = "John Doe";
+        String expectedAddress = "21 Main Street";
+        Customer expectedCustomer = new Customer(expectedId, expectedName, expectedAddress);
+
+        given(mockEntityManager.find(Customer.class, expectedId)).willReturn(expectedCustomer);
+
+        // When
+        Optional<Customer> actualCustomer = dao.findById(expectedId);
+
+        // Then
+        assertTrue(actualCustomer.isPresent());
+        assertEquals(expectedId, actualCustomer.get().getId());
+        assertEquals(expectedName, actualCustomer.get().getName());
+        assertEquals(expectedAddress, actualCustomer.get().getAddress());
+    }
 
 }
