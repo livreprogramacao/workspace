@@ -1,8 +1,10 @@
+package com.javacodegeeks.mockitotutorial1;
+
 import java.util.List;
+import static org.junit.Assert.assertEquals;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import org.junit.Test;
 
