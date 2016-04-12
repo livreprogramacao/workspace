@@ -3,9 +3,9 @@ package com.javacodegeeks.mockitotutorial2.custormer.dao;
 import com.javacodegeeks.mockitotutorial2.custormer.entity.Customer;
 import java.util.Optional;
 import javax.persistence.EntityManager;
-import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import static org.mockito.Mockito.when;
@@ -81,6 +81,31 @@ public class CustomerDAOTest {
         // When
         Optional<Customer> actualCustomer1 = dao.findById(expectedId1);
         Optional<Customer> actualCustomer2 = dao.findById(expectedId2);
+
+        // Then
+        assertEquals(expectedName1, actualCustomer1.get().getName());
+        assertEquals(expectedName2, actualCustomer2.get().getName());
+    }
+
+    @Test
+    public void invoking_mock_with_chained_stubs_returns_different_customers() throws Exception {
+        // Given
+        long expectedId1 = 10L;
+        String expectedName1 = "John Doe";
+        String expectedAddress1 = "21 Main Street";
+        Customer expectedCustomer1 = new Customer(expectedId1, expectedName1, expectedAddress1);
+
+        long expectedId2 = 20L;
+        String expectedName2 = "Jane Deer";
+        String expectedAddress2 = "46 High Street";
+        Customer expectedCustomer2 = new Customer(expectedId2, expectedName2, expectedAddress2);
+
+        when(mockEntityManager.find(Customer.class, expectedId1))
+                .thenReturn(expectedCustomer1).thenReturn(expectedCustomer2);
+
+        // When
+        Optional<Customer> actualCustomer1 = dao.findById(expectedId1);
+        Optional<Customer> actualCustomer2 = dao.findById(expectedId1);
 
         // Then
         assertEquals(expectedName1, actualCustomer1.get().getName());
