@@ -1,8 +1,11 @@
 package com.javacodegeeks.mockitotutorial2.custormer.dao;
 
 import com.javacodegeeks.mockitotutorial2.custormer.entity.Customer;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +22,9 @@ public class CustomerDAOTest {
     private CustomerDAO dao;
 
     private Customer homerSimpson, bruceWayne, tyrionLannister;
+
+    @Mock
+    private TypedQuery<Customer> mockQuery;
 
     @Mock
     private EntityManager mockEntityManager;
@@ -224,6 +230,19 @@ public class CustomerDAOTest {
         assertEquals(expectedId, actualCustomer.get().getId());
         assertEquals(expectedName, actualCustomer.get().getName());
         assertEquals(expectedAddress, actualCustomer.get().getAddress());
+    }
+
+    @Test
+    public void finding_all_customers_should_return_all_customers() throws Exception {
+        // Given
+        given(mockQuery.getResultList()).willAnswer(i -> Arrays.asList(homerSimpson, bruceWayne, tyrionLannister));
+        given(mockEntityManager.createQuery(anyString(), eq(Customer.class))).willReturn(mockQuery);
+
+        // When
+        List<Customer> actualCustomers = dao.findAll();
+
+        // Then
+        assertEquals(actualCustomers.size(), 3);
     }
 
 }
