@@ -125,4 +125,39 @@ public class CustomerDAOTest {
         assertFalse(actualCustomer.isPresent());
     }
 
+    @Test
+    public void finding_customer_should_respond_appropriately() throws Exception {
+        // Given
+        long expectedId = 10L;
+        String expectedName = "John Doe";
+        String expectedAddress = "21 Main Street";
+        Customer expectedCustomer1 = new Customer(expectedId, expectedName, expectedAddress);
+        Customer expectedCustomer2 = null;
+
+        when(mockEntityManager.find(Customer.class, expectedId)).thenReturn(expectedCustomer1, expectedCustomer2);
+
+        // When
+        Optional<Customer> actualCustomer1 = dao.findById(expectedId);
+        Optional<Customer> actualCustomer2 = dao.findById(expectedId);
+
+        // Then
+        assertTrue(actualCustomer1.isPresent());
+        assertFalse(actualCustomer2.isPresent());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void finding_customer_should_throw_exception_up_the_stack() throws Exception {
+        // Given
+        long expectedId = 10L;
+
+        when(mockEntityManager.find(Customer.class, expectedId)).thenThrow(new IllegalArgumentException());
+
+        // When
+        dao.findById(expectedId);
+
+        // Then
+        fail("Exception should be thrown.");
+    }
+
+
 }
