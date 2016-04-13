@@ -10,4 +10,16 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    <name>Semaphore Example</name>
+    <description>Semaphore Example
+
+In the previous examples in CountDownlatch and CyclicBarrier we saw how threads communicate with each other and wait till other completes.
+Here Semaphore class in concurrent package is used as a pool that can be acuired and released. very much like lock but with a difference. When a thread acquires a lock not other thread can enter the synchronise block.
+That means that the pool size of resource is always 1. Here in Semaphore we can define the poolsize and threads can acuire locks till there is resource left in the pool. Lets see how it works.
+
+Lets continue the example from previous chapters.
+The organization needs to recruit 4 Java developers. HR Manager asks 4 Tech Leads to conduct test and recruit the canditates. The problem here is that the Tech Leads have only 2 test paper and the photo copy machine is down. That means at a time only to candidates can give the test and other 2 have to wait.
+Lets simulate this by Semaphore example. 
+
+http://www.java-redefined.com/p/semaphore-example.html</description>
 </project>
