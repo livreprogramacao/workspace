@@ -10,4 +10,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    <name>CyclicBarrier Example</name>
+    <description>CyclicBarrier Example
+
+In the last chapter CountDownLatch we saw how a master or main thread waits till the worker threads finish their work. CyclicBarrier class also is a flavour of CountdownLatch with slight change. Lets continue the same example as CountDownLatch.
+A organization has to recruit 3 Java Developers. And so the HR Manager asks 3 Tech Leads to interview the candidates. In CountDownLatch example the HR Manager wanted to distribute the offer letter to all the 3 candidates that is the reason we made him to wait. Here the HR manager wants the Tech Leads to give the offer letter once they have selected the candidate.
+But the Tech Leads decide among themselves that they will give the offer letter to their respective candidate only when all interviews are done.
+Lets simulate this using CyclicBarrier.
+
+http://www.java-redefined.com/p/cyclicbarrier.html</description>
 </project>
