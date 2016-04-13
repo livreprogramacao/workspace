@@ -9,8 +9,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <version.mockito-all>1.9.5</version.mockito-all>
-        <version.junit>4.10</version.junit>
+        <version.mockito-all>1.10.19</version.mockito-all>
+        <version.junit>4.12</version.junit>
     </properties>
     <dependencies>
         <dependency>

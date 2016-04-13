@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.javacodegeeks.hughwphamill.mockito</groupId>
+    <artifactId>mockito2-stubbing</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>JavaCodeGeeks.com Mockito 2 Examples</name>
+    <description>Example code for Chapter 2 of the JavaCodeGeeks.com Academy Mockito Course </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <version.mockito-all>1.10.19</version.mockito-all>
+        <version.junit>4.12</version.junit>
+        <version.hibernate-jpa>1.0.1.Final</version.hibernate-jpa>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${version.mockito-all}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>${version.hibernate-jpa}</version>
+        </dependency>
+    </dependencies>
+</project>
