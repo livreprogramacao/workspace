@@ -2,6 +2,20 @@
 #
 #
 #   Ignore directories by entering the directory name into the file (with a slash appended):
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/bootstrap-social/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/bootstrap/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/datatables-plugins/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/datatables-responsive/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/datatables/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/flot.tooltip/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/flot/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/font-awesome/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/holderjs/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/jquery/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/metisMenu/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/mocha/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/morrisjs/
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/raphael/
 RemoteSystemsTempFiles/
 nbproject/
 target/
