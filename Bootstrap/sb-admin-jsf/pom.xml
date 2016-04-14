@@ -12,15 +12,15 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <version.jetty>9.3.7.v20160115</version.jetty>
-  </properties>
+        <version.jetty>9.3.7.v20160115</version.jetty>
+    </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-server</artifactId>
-      <version>${version.jetty}</version>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${version.jetty}</version>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -31,12 +31,15 @@
 
     <build>
         <plugins>
-      <plugin>
-        <!-- This plugin is needed for the servlet example -->
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <version>${version.jetty}</version>
-      </plugin>
+            <plugin>
+                <!-- This plugin is needed for the servlet example -->
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${version.jetty}</version>
+                <configuration>
+                    <contextPath>/SindicoEficaz</contextPath>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
