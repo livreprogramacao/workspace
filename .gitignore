@@ -2,6 +2,7 @@
 #
 #
 #   Ignore directories by entering the directory name into the file (with a slash appended):
+Bootstrap/sb-admin-jsf/src/main/webapp/resources/eve/
 Bootstrap/sb-admin-jsf/src/main/webapp/resources/bootstrap-social/
 Bootstrap/sb-admin-jsf/src/main/webapp/resources/bootstrap/
 Bootstrap/sb-admin-jsf/src/main/webapp/resources/datatables-plugins/
