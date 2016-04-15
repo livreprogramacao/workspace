@@ -37,7 +37,10 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${version.jetty}</version>
                 <configuration>
-                    <contextPath>/SindicoEficaz</contextPath>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                        <contextPath>/sb-admin-jsf</contextPath>
+                    </webApp>
                 </configuration>
             </plugin>
 
