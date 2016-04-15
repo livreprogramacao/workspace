@@ -2,6 +2,7 @@
 #
 #
 #   Ignore directories by entering the directory name into the file (with a slash appended):
+src/main/webapp/resources/bower_components/
 Bootstrap/sb-admin-jsf/src/main/webapp/resources/eve/
 Bootstrap/sb-admin-jsf/src/main/webapp/resources/bootstrap-social/
 Bootstrap/sb-admin-jsf/src/main/webapp/resources/bootstrap/
@@ -34,7 +35,6 @@ docs/negocio/
 docs/template/
 docs/OpenShift/
 docs/manual-usuario/
-src/main/webapp/resources/bower_components/
 
 
 
