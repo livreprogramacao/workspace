@@ -17,9 +17,15 @@
         <version.jsf.api>2.2.9</version.jsf.api>
         <version.jsf.impl>2.2.9</version.jsf.impl>
         <version.jstl>1.2</version.jstl>
+        <version.weld-servlet>2.3.3.Final</version.weld-servlet>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.jboss.weld.servlet</groupId>
+            <artifactId>weld-servlet</artifactId>
+            <version>${version.weld-servlet}</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
