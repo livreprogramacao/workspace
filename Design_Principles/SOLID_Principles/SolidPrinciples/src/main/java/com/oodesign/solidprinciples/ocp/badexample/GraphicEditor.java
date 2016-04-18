@@ -8,9 +8,9 @@ public class GraphicEditor {
 
     public void drawShape(Shape s) {
         if (s.m_type == 1) {
-            drawRectangle(s);
+            drawRectangle((Rectangle) s);
         } else if (s.m_type == 2) {
-            drawCircle(s);
+            drawCircle((Circle) s);
         }
     }
 
@@ -19,4 +19,5 @@ public class GraphicEditor {
 
     public void drawRectangle(Rectangle r) {
     }
+
 }
