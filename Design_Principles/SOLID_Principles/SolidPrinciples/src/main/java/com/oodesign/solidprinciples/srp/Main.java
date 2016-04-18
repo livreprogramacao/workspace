@@ -1,4 +1,4 @@
-package com.oodesign.solidprinciples.Single_Responsibility_Principle_SRP;
+package com.oodesign.solidprinciples.srp;
 
 
 /**
