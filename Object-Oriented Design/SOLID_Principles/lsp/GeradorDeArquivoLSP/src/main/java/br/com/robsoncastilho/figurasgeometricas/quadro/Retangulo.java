@@ -1,8 +1,8 @@
 package br.com.robsoncastilho.figurasgeometricas.quadro;
 
 public class Retangulo {
-    private double altura;
-    private double comprimento;
+    protected double altura;
+    protected double comprimento;
     
     public double altura() {
         return this.altura * this.comprimento;
