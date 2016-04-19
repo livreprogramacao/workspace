@@ -5,7 +5,7 @@ public class ProductOwner implements MembroDeTimeScrum {
 
     @Override
     public void PriorizarBacklog() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Priorizando backlog com base nas minhas necessidades de negócio");
     }
 
     @Override
