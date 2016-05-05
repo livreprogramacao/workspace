@@ -1,0 +1,19 @@
+GlassFish tip - Have your application be the root application 
+
+
+https://blogs.oracle.com/alexismp/entry/glassfish_tip_have_your_application
+
+asadmin deploy --contextroot "/" your-webapp.war
+
+
+
+
+ I've had the question several times about how to install a web application at the root of GlassFish (the use-case being probably to put into production an application on an intranet). Well, as discussed here it's as simple as deploying your application with a "/" web context which can be done using the web Admin console (set the "Context Root:" field to "/") or the command line :
+
+% asadmin deploy --contextroot "/" your-webapp.war
+
+or making sure the sun-web.xml deployment descriptor contains a context-root element set to /.
+
+The alternate solution is to use the notion of default web module for a given virtual server just like the web admin console is the default for port 4848.
+
+Change the HTTP listen port to default 80 (with appropriate privileges on Unix) and you're off to the simplest possible URL for your users
