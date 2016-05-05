@@ -1,0 +1,13 @@
+java.lang.RuntimeException: 
+javax.annotation.processing.FilerException: 
+Attempt to recreate a file for type org.mano.produto.entity.Product_ 
+
+Having two persistence units using the same Entity class did seem to be the problem.
+
+In my case I had one unit for querying data and the other for authentication. The one for authentication does not need to know about my Entity classes, so in Netbeans I had to uncheck the "Include All Entity Classes in "MyWebServiceProject" Module".
+Or add:
+
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+to the web.xml file for that persistence unit.
+

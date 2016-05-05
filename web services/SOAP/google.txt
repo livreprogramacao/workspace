@@ -1,0 +1,8 @@
+http://www.developer.com/java/creating-soap-web-services-with-jax-ws.html
+http://tomee.apache.org/examples-trunk/simple-webservice/README.html
+http://www.journaldev.com/9123/jax-ws-soap-web-services-example-tutorial
+https://jaxenter.com/creating-soap-web-services-using-jax-ws-117689.html
+http://www.mkyong.com/tutorials/jax-ws-tutorials/
+https://netbeans.org/kb/docs/websvc/jax-ws_pt_BR.html
+https://www.genuitec.com/products/myeclipse/learning-center/ws/jax-ws-web-services-clients-tutorial/
+https://www.genuitec.com/products/myeclipse/learning-center/ws/jax-ws-web-services-clients-tutorial/
