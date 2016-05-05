@@ -1,6 +1,4 @@
-# workspace
-
-Meus conhecimentos:
+# Meus conhecimentos
 
 - Sólida experiência em Java
 - Base sólida em programação orientada a objetos e de padrões de projetos
