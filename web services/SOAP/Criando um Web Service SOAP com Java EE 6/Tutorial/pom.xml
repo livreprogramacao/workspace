@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany</groupId>
+    <artifactId>Tutorial</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>        
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin de empacotamento de modulo WAR -->
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <!-- Plugin do jaxb para geracao das classes Java dos schemas XSD -->
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.8.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>
+                        ${basedir}/src/main/resources/schemas
+                    </schemaDirectory>
+                    <generateDirectory>
+                        ${project.build.directory}/generated-sources/jaxb2
+                    </generateDirectory>
+                    <args>
+                        <arg>-npa</arg>
+                        <arg>-Xcollection-setter-injector</arg>
+                    </args>
+                    <extension>true</extension>
+                    <episode>true</episode>
+                    <plugins>
+                        <plugin>
+                            <groupId>net.java.dev.vcc.thirdparty</groupId>
+                            <artifactId>collection-setter-injector</artifactId>
+                            <version>0.5.0-1</version>
+                        </plugin>
+                    </plugins>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

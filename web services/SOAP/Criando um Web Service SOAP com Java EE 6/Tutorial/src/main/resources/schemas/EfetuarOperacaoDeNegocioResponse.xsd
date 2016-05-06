@@ -1,0 +1,11 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+        targetNamespace="http://testewar.javaeenacaixa.com/ws/types"
+        xmlns:tns="http://testewar.javaeenacaixa.com/ws/types"
+        elementFormDefault="qualified">
+ 
+    <complexType name="EfetuarOperacaoDeNegocioResponse">
+        <sequence>
+            <element name="resultado" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

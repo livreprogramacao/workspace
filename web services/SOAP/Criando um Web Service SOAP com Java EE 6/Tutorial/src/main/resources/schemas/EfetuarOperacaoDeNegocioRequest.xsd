@@ -1,0 +1,11 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+        targetNamespace="http://testewar.javaeenacaixa.com/ws/types"
+        xmlns:tns="http://testewar.javaeenacaixa.com/ws/types"
+        elementFormDefault="qualified">
+ 
+    <complexType name="EfetuarOperacaoDeNegocioRequest">
+        <sequence>
+            <element name="texto" type="string" minOccurs="1" maxOccurs="1"/>   
+        </sequence>
+    </complexType>
+</schema>
