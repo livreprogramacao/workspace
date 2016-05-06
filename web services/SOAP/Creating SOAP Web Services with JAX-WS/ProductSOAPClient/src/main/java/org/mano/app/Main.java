@@ -19,6 +19,7 @@ import org.mano.produto.boundary.ProductWSService;
 
 public class Main extends JFrame {
 
+    private static final long serialVersionUID = -1902589667628366425L;
     private static List<Product> products = new ArrayList<>();
     private JTable table;
 
@@ -27,9 +28,11 @@ public class Main extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 400);
         setLayout(new BorderLayout(5, 5));
+        
         ProductWSService webService = new ProductWSService();
         ProductWS productWS = webService.getProductWSPort();
         products = productWS.getAllProductDetails();
+        
         table = new JTable();
         populateTable();
         add(new JScrollPane(table), BorderLayout.CENTER);
