@@ -1,8 +1,8 @@
-package net.mahtabalam.ws.sib;
+package net.mahtabalam.ws;
 
 import java.util.HashMap;
 import java.util.Map;
-import net.mahtabalam.ws.sei.State;
+import net.mahtabalam.ws.State;
 
 public class Utility {
 

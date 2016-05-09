@@ -1,13 +1,13 @@
-package net.mahtabalam.ws.sib;
+package net.mahtabalam.ws;
 
-import net.mahtabalam.ws.sei.Country;
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 /**
  * CountryImpl is the Service Implementation Bean (SIB) that implements all the methods of the SEI.
  */
-@WebService(targetNamespace = "http://ws.mahtabalam.net/")
+@WebService()
 public class CountryImpl implements Country {
     private Utility states;
     public CountryImpl(){
@@ -15,10 +15,12 @@ public class CountryImpl implements Country {
         states.loadData();
     }
     @WebMethod
-    public String getCapital(String stateName) {
+    @Override
+    public String getCapital(@WebParam(name = "arg0www") String stateName) {
         return states.getState(stateName).getCapital();
     }
     @WebMethod
+    @Override
     public String getLanguages(String stateName) {
         return states.getState(stateName).getLanguages();
     }

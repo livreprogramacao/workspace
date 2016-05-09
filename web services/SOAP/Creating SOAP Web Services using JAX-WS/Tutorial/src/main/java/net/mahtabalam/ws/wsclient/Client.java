@@ -1,6 +1,6 @@
 package net.mahtabalam.ws.wsclient;
 
-import net.mahtabalam.ws.sib.CountryImpl;
+import net.mahtabalam.ws.CountryImpl;
 
 /**
  *

@@ -1,6 +1,6 @@
 package net.mahtabalam.ws.wsclient;
 
-import net.mahtabalam.ws.sib.CountryImpl;
+import net.mahtabalam.ws.CountryImpl;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.xml.namespace.QName;
@@ -17,7 +17,10 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CountryImplService", targetNamespace = "http://ws.mahtabalam.net/", wsdlLocation = "http://localhost:8080/SOAPWithJaxWS/discoverIndia?wsdl")
+@WebServiceClient(
+        name = "CountryImplService"
+        , targetNamespace = "http://ws.mahtabalam.net/"
+        , wsdlLocation = "http://localhost:8080/SOAPWithJaxWS/discoverIndia?wsdl")
 public class CountryImplService
     extends Service
 {
@@ -69,7 +72,10 @@ public class CountryImplService
      */
     @WebEndpoint(name = "CountryImplPort")
     public CountryImpl getCountryImplPort() {
-        return super.getPort(new QName("http://ws.mahtabalam.net/", "CountryImplPort"), CountryImpl.class);
+        return super.getPort(
+                new QName("http://ws.mahtabalam.net/"
+                        , "CountryImplPort")
+                , CountryImpl.class);
     }
 
     /**

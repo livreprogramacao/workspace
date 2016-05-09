@@ -1,14 +1,16 @@
-package net.mahtabalam.ws.sei;
+package net.mahtabalam.ws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 
 /**
 * Implementing the Web Service
 *
 * Here is the Service Endpoint Interface (SEI) for the service
 */
-@WebService(targetNamespace = "http://ws.mahtabalam.net/")
+@WebService
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 public interface Country {
 
     @WebMethod

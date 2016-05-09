@@ -1,4 +1,4 @@
-package net.mahtabalam.ws.sei;
+package net.mahtabalam.ws;
 
 public class State {
 	private String name;
