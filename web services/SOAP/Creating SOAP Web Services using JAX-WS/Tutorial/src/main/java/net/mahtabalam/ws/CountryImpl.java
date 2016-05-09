@@ -4,13 +4,16 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.ParameterStyle;
+import javax.jws.soap.SOAPBinding.Style;
+import javax.jws.soap.SOAPBinding.Use;
 
 /**
  * CountryImpl is the Service Implementation Bean (SIB) that implements all the
  * methods of the SEI.
  */
 @WebService()
-@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
+@SOAPBinding(style = Style.RPC, use=Use.LITERAL, parameterStyle= ParameterStyle.WRAPPED)
 public class CountryImpl implements Country {
 
     private Utility states;
