@@ -1,6 +1,0 @@
-/*
-*   Livre Programação ltda-ME
-*
-*   Criando um Web Services SOAP com JAX-WS.
-*
-*/
