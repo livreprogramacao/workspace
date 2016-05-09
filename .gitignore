@@ -39,6 +39,7 @@ docs/manual-usuario/
 
 
 #    Ignore files
+hs_err*.log
 .settings
 .nbattrs
 .project
