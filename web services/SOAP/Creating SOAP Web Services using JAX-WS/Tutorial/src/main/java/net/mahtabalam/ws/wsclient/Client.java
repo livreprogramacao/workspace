@@ -1,7 +1,5 @@
 package net.mahtabalam.ws.wsclient;
 
-import net.mahtabalam.ws.CountryImpl;
-
 /**
  *
  * @author user
