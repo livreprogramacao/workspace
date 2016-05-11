@@ -68,6 +68,15 @@ public class MockitoConfigExamplesTest {
         listMock.add(randomAlphabetic(6));
     }
 
+    @Test(expected = NullPointerException.class)
+    public final void givenSpy_whenConfiguringBehaviorOfSpy_thenCorrectlyConfigured() {
+        final MyList instance = new MyList();
+        final MyList spy = Mockito.spy(instance);
+
+        doThrow(NullPointerException.class).when(spy).size();
+        spy.size();
+    }
+
     @Test
     public final void whenMockMethodCallIsConfiguredToCallTheRealMethod_thenRealMetehodIsCalled() {
         final MyList listMock = Mockito.mock(MyList.class);
@@ -88,15 +97,6 @@ public class MockitoConfigExamplesTest {
 
         final String element = listMock.get(1);
         assertThat(element, is(equalTo("Always the same")));
-    }
-
-    @Test(expected = NullPointerException.class)
-    public final void givenSpy_whenConfiguringBehaviorOfSpy_thenCorrectlyConfigured() {
-        final MyList instance = new MyList();
-        final MyList spy = Mockito.spy(instance);
-
-        doThrow(NullPointerException.class).when(spy).size();
-        spy.size();
     }
 
 }
