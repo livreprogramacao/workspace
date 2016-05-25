@@ -38,8 +38,16 @@ npm install --global gulp-cli
 
 # Installing Karma and plugins
 # Create and run unit tests, with Karma
+#npm install karma
 npm install karma --save-dev
 npm install karma-jasmine karma-chrome-launcher --save-dev
 
 
+
 # https://docs.angularjs.org/tutorial
+# https://docs.angularjs.org/guide/
+# https://docs.angularjs.org/guide/introduction
+
+# Tutorial: Tour of Heroes
+# https://angular.io/docs/ts/latest/tutorial/
+
