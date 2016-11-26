@@ -15,5 +15,4 @@
 - Familiaridade com SQL e modelagem de banco de dados relacionais
 - Familiaridade com sistemas de controle de versão git - svn
 - Familiaridade com sistemas Unix - Gnu/Linux
-
-- Configuração de servidores Java web ou container servlet e servidores de aplicação
+- Familiaridade servidores Java web ou container servlet e servidores de aplicação
